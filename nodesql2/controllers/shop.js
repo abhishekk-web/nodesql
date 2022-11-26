@@ -4,11 +4,12 @@ const Cart = require('../models/cart');
 exports.getProducts = (req, res, next) => {
   Product.findAll()
     .then(products => {
-      res.render('shop/product-list', {
-        prods: products,
-        pageTitle: 'All Products',
-        path: '/products'
-      });
+        res.json({products, success: true})
+      // res.render('shop/product-list', {
+      //   prods: products,
+      //   pageTitle: 'All Products',
+      //   path: '/products'
+      // });
     })
     .catch(err => {
       console.log(err);
@@ -102,9 +103,9 @@ exports.postCart = (req, res, next) => {
     });
   })
   .then(()=> {
-    res.redirect('/cart');
+    res.status(200).json({success: true, message: 'Successfully added'});
   })
-  .catch(err => console.log(err));
+  .catch(err => {res.status(500).json({success: false, message: "Error occured"})});
 };
 
 exports.postCartDeleteProduct = (req, res, next) => {
