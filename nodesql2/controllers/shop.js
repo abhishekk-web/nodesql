@@ -4,7 +4,7 @@ const Cart = require('../models/cart');
 exports.getProducts = (req, res, next) => {
   Product.findAll()
     .then(products => {
-        res.json({products, success: true})
+      res.json({products, success: true})
       // res.render('shop/product-list', {
       //   prods: products,
       //   pageTitle: 'All Products',
@@ -59,21 +59,29 @@ exports.getCart = (req, res, next) => {
 
       return cart.getProducts()
       .then(products=>{
-        res.render('shop/cart', {
-          path: '/cart',
-          pageTitle: 'Your Cart',
+        res.status(200).json({
+          success: true,
           products: products
-        });
+        })
+        // res.render('shop/cart', {
+        //   path: '/cart',
+        //   pageTitle: 'Your Cart',
+        //   products: products
+        // });
       })
-      .catch(err=>{console.log(err);})
+      .catch(err=>{res.status(500).json({success: false, message: "Products are already there", err});
+    })
 
     })
-    .catch(err=>{console.log(err);})
+    .catch(err=>{res.status(500).json({success: false, message: "Products are already there", err});})
 
       
 };
 
 exports.postCart = (req, res, next) => {
+  if(!req.body.productId){
+    return res.status(400).json({success: false, message: 'Produtct Id is missing'});
+  }
   const prodId = req.body.productId;
   let fetchedCart;
   let newQuantity = 1;
