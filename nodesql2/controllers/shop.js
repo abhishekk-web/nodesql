@@ -1,10 +1,34 @@
 const Product = require('../models/product');
 const Cart = require('../models/cart');
 
+const ITEMS_PER_PAGE = 2;
+
 exports.getProducts = (req, res, next) => {
-  Product.findAll()
+  const page = +req.query.page || 1;
+  var totalItems;
+
+    Product.count()
+    .then((totals) => {
+      totalItems = totals;
+      return Product.findAll({
+        offset: (page - 1) * ITEMS_PER_PAGE,
+        limit: ITEMS_PER_PAGE
+    })
+    })
     .then(products => {
-      res.json({products, success: true})
+      res.json({
+        products: products,
+        currentPage: page,
+        hasNextPage: ITEMS_PER_PAGE * page < totalItems,
+        nextPage: +page + 1,
+        hasPreviousPage: page > 1,
+        PreviousPage: +page - 1,
+        lastPage: Math.ceil(totalItems / ITEMS_PER_PAGE),
+        });
+
+
+
+
       // res.render('shop/product-list', {
       //   prods: products,
       //   pageTitle: 'All Products',
@@ -62,6 +86,8 @@ exports.getCart = (req, res, next) => {
         res.status(200).json({
           success: true,
           products: products
+
+          
         })
         // res.render('shop/cart', {
         //   path: '/cart',
@@ -80,7 +106,7 @@ exports.getCart = (req, res, next) => {
 
 exports.postCart = (req, res, next) => {
   if(!req.body.productId){
-    return res.status(400).json({success: false, message: 'Produtct Id is missing'});
+    return res.status(400).json({success: false, message: 'Product Id is missing'});
   }
   const prodId = req.body.productId;
   let fetchedCart;
