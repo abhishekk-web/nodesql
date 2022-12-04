@@ -1,5 +1,6 @@
 const Product = require('../models/product');
 const Cart = require('../models/cart');
+const CartItem = require('../models/cart-item');
 
 const ITEMS_PER_PAGE = 2;
 
@@ -143,27 +144,26 @@ exports.postCart = (req, res, next) => {
 };
 
 exports.postCartDeleteProduct = (req, res, next) => {
-  const prodId = req.body.productId;
-  req.user
-    .getCart()
-    .then(cart=>{
-      return cart.getProducts({where: {id: prodId}});
+  const prodId = req.params.id;
+    CartItem.findAll({where : {productId: prodId}})
+    .then(product => {
+      product[0].destroy()
+      .then(response =>{
+        res.status(200).json({success:true , message:"deleted"})
+      })
     })
-    .then(products=>{
-      const product = products[0];
-      return product.cartItem.destroy();
-    })
-    .then(result => {
-      res.redirect('/cart');
-    })
+    .catch(err=>res.json({err}))
 };
 
-exports.getOrders = (req, res, next) => {
-  res.render('shop/orders', {
-    path: '/orders',
-    pageTitle: 'Your Orders'
-  });
-};
+exports.getOrders=(req,res,next)=>{
+  req.user.getOrders({include:[{model:Product}]})
+  .then(products=>{
+    res.status(200).json({products:products});
+  })
+  .catch(err=>{
+    console.log(err)
+  })
+}
 
 exports.getCheckout = (req, res, next) => {
   res.render('shop/checkout', {
@@ -171,3 +171,30 @@ exports.getCheckout = (req, res, next) => {
     pageTitle: 'Checkout'
   });
 };
+
+exports.postOrders = async (req, res, next) => {
+  let order = await req.user.createOrder();
+
+  let myOrders = [];
+  req.user.getCart()
+  .then(cart=> {
+    console.log("cart items");
+    cart.getProducts()
+    .then(async(products)=> {
+      console.log('Cart products', products)
+      for(let i=0; i<products.length; i++) {
+        let order_items = await order.addProduct(products[i], {
+          through: {quantity: products[i].cartItem.quantity} })
+          myOrders.push(order_items)
+              console.log(myOrders)
+         }
+         CartItem.destroy({where:{cartId : cart.id}})
+         .then(response=>console.log(response))
+         res.status(200).json({data: myOrders , success : true})
+       })
+.catch(err=>console.log(err))
+})
+.catch((err)=>{
+res.status(500).json(err)
+})
+}
