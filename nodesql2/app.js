@@ -4,6 +4,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+const app = express();
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+app.use(cors());
+
 const errorController = require('./controllers/error');
 const sequelize = require('./util/database');
 const Product = require('./models/product');
@@ -13,9 +20,9 @@ const CartItem = require('./models/cart-item');
 const Order = require('./models/order');
 const OrderItem = require('./models/order-item');
 
-const app = express();
 
-app.use(cors());
+
+
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
