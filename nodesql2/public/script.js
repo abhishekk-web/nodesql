@@ -137,7 +137,7 @@ function getProducts(page){
     // parentNode.innerHTML = '';
     
     parentSection.innerHTML = '';
-    axios.get(`http://localhost:3000/products?page=${page}`).then((data) => {
+    axios.get(`http://3.87.2.136:3000/products?page=${page}`).then((data) => {
         console.log(data);
         if(data.request.status === 200) {
             const products = data.data.products;
@@ -178,7 +178,7 @@ function getProducts(page){
 function removeItem(prodId) {
 
     axios
-    .delete(`http://localhost:3000/cart-delete-item/${prodId}`)
+    .delete(`http://3.87.2.136:3000/cart-delete-item/${prodId}`)
     .then((result) => {
       if (result.status == 200) {
         var removeButtonClicked = document.getElementsByClassName(
@@ -364,7 +364,7 @@ function addToCart(productId){
 
     var cartTitle = document.getElementsByClassName("cart-title");
     console.log(cartTitle);
-    axios.post('http://localhost:3000/cart', {productId : productId})
+    axios.post('http://3.87.2.136:3000/cart', {productId : productId})
     .then(response => {
         // console.log(response);
         if(response.status === 200) {
@@ -385,7 +385,7 @@ function addToCart(productId){
 
 function getCartDetails(){
     
-    axios.get('http://localhost:3000/cart')
+    axios.get('http://3.87.2.136:3000/cart')
     .then(response => {
         console.log(response);
         var parentElement = document.getElementById("cart-item");
@@ -443,7 +443,7 @@ function getCartDetails(){
 }
 
 window.addEventListener('DOMContentLoaded',()=>{
-    axios.get("http://localhost:3000/orders")
+    axios.get("http://3.87.2.136:3000/orders")
     .then(response =>{
         console.log(response)
        let purchase = document.getElementById('purchase')
@@ -469,7 +469,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 
  purchaseBtn.addEventListener('click',(productId)=>{
      console.log("purchaseid")
-     axios.post(`http://localhost:3000/createorder`,{productId : productId})
+     axios.post(`http://3.87.2.136:3000/createorder`,{productId : productId})
     .then(response =>{
      console.log("purchase",response)
     })
