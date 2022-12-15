@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>E-Commerce website</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+        <script src="script.js" defer></script>
+        <script src="https://kit.fontawesome.com/54a502530b.js" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+
+        <!------------------ nav bar ------------------>
+
+        <div class="flex-container">
+          <ul class="navflex">
+            <li class ="navli"><a class="navlink" href="home.html">HOME</a></li>
+            <li class ="navli"><a class="navlink" href="#">STORE</a></li>
+            <li class ="navli"><a class="navlink" href="About.html">ABOUT</a></li>
+          </ul>
+          <div class="border-cart-nav">
+
+            <button class="see-the-cart-btn" style="background-color: black; border: none; font-weight: none;"><a class="cart-nav-button" id="btn" href="#">Cart</a></button>
+            <p class="nav-cart-items">0</p>
+            </div>
+            <!---------------- nav side bar --------------->
+
+    <div class="height">    
+        <nav id="nav">
+
+            <div class="nav-side">
+
+                <h1 class="cart-header">Cart</h1>
+                <button id="x-close" class="x-button">X</button>
+
+            </div>
+
+            <div class="headers-cart">
+
+                <h1 class="item-header">ITEM</h1>
+                <h1 class="price-header">PRICE</h1>
+                <h1 class="quantity-header">QUANTITY</h1>
+
+            </div>
+        <div id="cart-item" class="cart-items">
+            <!-- <div class="cart-flex">
+                <div>
+                    <p class="cart-item-title">Album 1</p>
+                    <img class="cart-item-image" src="https://images.unsplash.com/photo-1619983081593-e2ba5b543168?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG11c2ljJTIwYWxidW0lMjBwb3N0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" height="50" width="50">
+                </div>
+                <div class="cart-price-bottom">
+                    <p class="cart-price">$12.99</p>
+                </div>
+                <div class="flex-carts">
+                    <input class="cart-quantity-input" type="number" value="1">
+                    <button type="button" class="btn-danger">X</button>
+                </div>
+            </div> -->
+            <!-- <div class="cart-flex">
+                <div>
+                    <p class="cart-item-title">T-Shirt</p>
+                    <img class="cart-item-image" src="https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHQlMjBzaGlydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" height="50" width="50">
+                </div>
+                <div class="cart-price-bottom">
+                    <p class="cart-price">$19.99</p>
+                </div>
+                <div class="flex-carts">
+                    <input class="cart-quantity-input" type="number" value="2">
+                    <button type="button" class="btn-danger">X</button>
+                </div>
+            </div> -->
+        </div>
+
+            <div class="total-nav">
+
+                <h1>Total</h1>
+                <h1 class="dollar-nav">$0.00</h1>
+
+            </div>
+
+            <div class="cart-items">
+            </div>
+
+            <div id="purchase">
+       
+            </div>
+
+            <div id="link-carts">
+
+                <button class="purchase-nav" id="purchase-btn"><a id="link-cart" href="#">Order now</a></button>
+
+            </div>
+
+        </nav>
+    </div>    
+          </div>
+        </div>
+
+        
+
+        <!----------------- After nav ----------------->
+
+        <div class="generic-container">
+
+            <h1 class="generic-text">The Generics</h1>
+
+        </div>
+
+
+        <!----------------- After gen ----------------->
+
+        <h1 class="aftergen-header">Products</h1>
+
+        <div class="aftergen" id="Products">
+
+            
+            <div class="products"></div>
+        
+
+        <!----------------- Music cart ---------------->
+
+        <!-- <div class="music-cart-container">
+            <div class="two-flex">
+                <div class="albumtext">
+                    <p class="shop-item-title">Album 1</p>
+                    <div id="image-container"><img class="image" src="https://images.unsplash.com/photo-1619983081593-e2ba5b543168?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG11c2ljJTIwYWxidW0lMjBwb3N0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt=""></div>                    <div class="second-music-cart">
+                        <p class="price-text">$12.99</p>
+                        <div id="container"></div>
+                        <button class="btn-cart" id="buttons"><a class="button-links" href="#">ADD TO CART</a></button>
+                    </div>                
+                </div>
+
+                <div class="albumtext">
+                    <p class="shop-item-title">Album 2</p>
+                    <div id="image-container"><img class="image" src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG11c2ljJTIwYWxidW0lMjBwb3N0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt=""></div>
+                    <div class="second-music-cart">
+                        <p class="price-text">$14.99</p>
+                        <div id="container"></div>
+                        <button class="btn-cart" id="buttons"><a class="button-links" href="#">ADD TO CART</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="two-flex">
+                <div class="albumtext">    
+                    <p class="shop-item-title">Album 3</p>
+                    <div id="image-container"><img class="image" src="https://media.istockphoto.com/id/1395337634/photo/image-of-old-fashioned-vintage-vinyl-record-player-isolated-over-dark-green-background.jpg?b=1&s=170667a&w=0&k=20&c=aEwp0dsdg9iNmsZcf6yplCQQjFv2Nx7CRr13fXiWCH4=" alt=""></div>
+                    <div class="second-music-cart">
+                        <p class="price-text">$9.99</p>
+                        <div id="container"></div>
+                        <button class="btn-cart" id="buttons"><a class="button-links" href="#">ADD TO CART</a></button>
+                    </div>
+                </div>
+                <div class="albumtext">
+                    <p class="shop-item-title">Album 4</p>
+                    <div id="image-container"><img class="image" src="https://media.istockphoto.com/id/172167229/photo/hifi.jpg?b=1&s=170667a&w=0&k=20&c=FKub81QSngckFfk6ZFUqFmGbvYF_tMakZ8kL8xwXfNM=" alt=""></div>
+                    <div class="second-music-cart">
+                        <p class="price-text">$19.99</p>
+                        <div id="container"></div>
+                        <button class="btn-cart" id="buttons"><a class="button-links" href="#">ADD TO CART</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        --------------- After music cart ----------------->
+    
+        <!-- <div class="aftergen" >
+
+            <h1 class="aftergen-header">MERCH</h1> -->
+
+        
+
+        <!----------------- After merch header ----------------->
+
+    <!-- <div class="music-cart-container">
+        <div class="two-flex">
+            <div  class="albumtext">
+                <p class="shop-item-title">T-Shirt</p>
+                <div id="image-container"><img class="image" src="https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHQlMjBzaGlydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt=""></div>
+                <div class="second-music-cart">
+                    <p class="price-text">$19.99</p>
+                    <div id="container"></div>
+                    <button class="btn-cart" id="buttons"><a class="button-links" href="#">ADD TO CART</a></button>
+                </div>
+            </div>
+           
+            <div class="albumtext">
+                <p class="shop-item-title">Coffee Cup</p>
+                <div id="image-container"><img class="image" src="https://images.unsplash.com/photo-1546379753-abb7fd8cfb93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y29mZmVlJTIwY3VwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt=""></div>
+                <div class="second-music-cart">
+                    <p class="price-text">$6.99</p>
+                    <div id="container"></div>
+                    <button  class="btn-cart" id="buttons"><a class="button-links" href="#">ADD TO CART</a></button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+        <!----------------- After merch cart ----------------->
+
+        
+
+    </div>
+        <div class="see-the-cart">
+
+            <div id="pagination" class="pagination"></div>
+
+            <button class="see-the-cart-btn"><a class="see-the-cart-button-links" href="#">See the cart</a></button>
+
+        </div>
+
+        <!-------------------- Bottom bar -------------------->
+
+        <div class="bottom-bar-container">
+
+            <div>
+                <h1 class="bottom-bar-text">The Generics</h1>
+            </div>
+
+            <div class="bottomflex">
+
+                <a class="fonts" href="#"><i class="fa fa-youtube-play" style="font-size:48px;color:red"></i></i></a>
+                <a class="fonts" href="#"><i class="fa fa-spotify" style="font-size:48px;color:red"></i></a>
+                <a class="fonts" href="#"><i class="fa fa-facebook-f" style="font-size:48px;color:red"></i></a>
+
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.0/axios.min.js"></script>
+        
+    </body>
+
+</html>

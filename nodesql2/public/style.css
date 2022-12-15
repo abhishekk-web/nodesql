@@ -1,0 +1,543 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+*   {
+    box-sizing: border-box;
+}
+
+/* body  {
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+} */
+
+.navflex {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    border: 2px solid black;
+    height: 40px;
+    text-align: center;
+}
+
+.cart-nav-button {
+    color: white;
+    text-decoration: none;
+    border: 3px solid aqua;
+    border-radius: 4px;
+    margin-left: 180px;
+    /* width: 200px; */
+    /* margin-top: 20px; */
+    font-size: 25px;
+    height: 35px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart-flex {
+    display:flex;
+    border-bottom: 1px solid black;
+}
+
+.cart-price-bottom {
+    margin-top: 50px;
+}
+
+.cart-nav-button.active {
+    transform: translateX(-100px);
+}
+
+.cart-price {
+    font-weight: bold;
+    font-size: large;
+}
+
+.cart-item-title{
+    font-weight: bold;
+}
+
+.cart-quantity-input {
+    width: 30px;
+}
+
+.flex-carts {
+    margin-top: 20px
+}
+
+.nav-cart-items{
+    color: aqua;
+    /* margin-left: 240px; */
+    margin-bottom: 170px;
+    font-size: 25px;
+    /* border: 2px solid white; */
+    width: 20px;
+    height: 25px;
+    margin-left: 4px;
+}
+
+.border-cart-nav {
+    /* border: 2px solid white; */
+    margin-left: 20px;
+    margin-top: 20px;
+    /* width: 200px;; */
+    display: flex;
+}
+
+.flex-container{
+
+    /* border: 2px solid white; */
+    background-color: black;
+    width: 100%;
+    display: flex;
+    height: 80px;
+    position: fixed;
+
+}
+
+.navli {
+    border: 2px solid black;
+    margin-left: 300px;
+}
+
+.navlink{
+
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+
+}
+
+    /* after nav */
+
+.generic-container {
+
+    background-color: grey;
+    border: 2px solid black;
+    height: 300px;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+
+}    
+
+.generic-text {
+
+    color: white;
+    text-align: center;
+    margin-top: 120px;
+    font-size: 100px;
+
+}
+
+/* After gen */
+
+.aftergen {
+
+    border: 2px solid white;
+    text-align: center;
+    height: 150px;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.aftergen-header {
+
+    font-size: 40px;
+    font-family: "Metal Mania";
+    margin-top: 50px;
+    text-align: center;
+
+}
+
+/* music cart */
+
+/* .music-cart-container{
+    border: 2px solid black;
+} */
+
+.first-music-cart {
+    display: flex;
+    justify-content: space-around;
+}
+
+.second-music-cart {
+    display: flex;
+    /* border: 2px solid black; */
+    justify-content: space-around;
+    width: 500px;
+    margin-top: 20px;
+}
+.flex-music-cart {
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid black; */
+    height: 100px;
+}
+
+.price-text{
+
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    /* border: 2px solid black; */
+    height: 40px;
+
+}
+
+.btn-cart {
+    height: 40px;
+    margin-top: 5px;
+    background-color: #56CCF2;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+.btn-cart:hover{
+    background-color: darkcyan;
+    color: white;
+}
+
+.third-music-cart {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    /* border: 2px solid black; */
+    height: 300px;
+}
+
+.image {
+
+    height: 300px;
+    width: 400px;
+    object-fit: cover;
+
+}
+
+.thirdimage {
+
+    height: 300px;
+    width: 400px;
+    margin-bottom: 200px;
+
+}
+
+.albumtext {
+
+    /* display: flex; */
+    font-weight: bold;
+    font-size: 30px;
+    /* justify-content: space-around; */
+    /* border: 2px solid black; */
+    /* margin-top: 20px; */
+
+}
+
+.two-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* see the cart button */
+
+.see-the-cart-btn{
+
+    height: 50px;
+    margin-top: 5px;
+    color: #56CCF2;
+    background-color: grey;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    width: 150px;
+    font-size: 20px;
+
+}
+
+.see-the-cart {
+    /* border: 2px solid black; */
+    text-align: center;
+    height: 100px;
+    margin-bottom: 50px;
+}
+
+/* bottom bar */
+
+.bottom-bar-container {
+
+    background-color: #56CCF2;
+    height: 100px;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.bottom-bar-text {
+    color: white;
+    margin-top: 15px;
+    font-size: 50px;
+    margin-left: 100px;
+    /* border: 2px solid black; */
+}
+
+.fonts {
+
+   size: 100px;
+   margin-right: 20px;
+   /* border: 2px solid black; */
+   margin-left: 20px;
+   height: 50px;
+   margin-top: 20px;
+   transition-duration: 0.4s;
+   width: 75px;
+   margin-right: 10px;
+
+}
+
+.bottomflex {
+    /* border: 2px solid black; */
+    margin-right: 100px;
+    display: flex;
+    /* justify-content: space-around; */
+    width: 400px;
+}
+
+.button-links {
+    text-decoration: none;
+    color: white;
+}
+
+.see-the-cart-button-links {
+    text-decoration: none;
+    color: #56CCF2;
+}
+
+.fonts:hover{
+    background-color: darkcyan;
+}
+
+/* side nav bar */
+
+#nav {
+    background-color: white;
+    border: 2px solid black;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    margin-top: 88px;
+}
+
+#nav.active {
+    transform: translateX(0);
+}
+
+#nav ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+#nav ul li {
+    padding: 2rem 0;;
+}
+
+#nav a {
+    color: black;
+    text-decoration: none;
+}
+
+
+.nav-side {
+
+    display: flex;
+    color: black;
+
+}
+
+.x-button {
+ margin-left: 120px;
+ height: 30px;
+ margin-top: 15px;
+}
+
+.headers-cart {
+    color: black;
+    display: flex;
+}
+
+.item-header {
+    font-size:17px;
+    border-bottom: 1px solid black;
+}
+
+.price-header {
+    font-size: 17px;
+    margin-left: 10px;
+    border-bottom: 1px solid black;
+}
+
+.quantity-header {
+    font-size: 17px;
+    margin-left: 10px;
+    border-bottom: 1px solid black;
+}
+
+.total-nav {
+
+    display: flex;
+    margin-left: 80px;
+
+}
+
+.dollar-nav {
+    margin-left: 15px;
+}
+
+.purchase-nav {
+    background-color: aqua;
+    border: none;
+    height: 40px;
+    border-radius: 4px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.purchase-nav:hover {
+    background-color: darkcyan;
+}
+
+/* notification */
+
+#buttons-cart {
+    background-color: rebeccapurple;
+    color: white;
+    font-family: inherit;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+#container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.toast {
+
+    background-color: rebeccapurple;
+    border-radius: 5px;
+    color: #fff;
+    padding: 2rem;
+    margin: 1rem;
+    width: 400px;
+    font-weight: bold;
+    font-size: x-large;
+        
+}
+
+/* #Products {
+    height: 100px;
+    width: 0px;
+} */
+
+/* .product-container {
+    height: 100px;
+    width: 100px;
+    display: flex;
+}
+
+.product-title {
+    font-weight: bold;
+}
+
+.product-image {
+    height: 400px;
+    width: 400px;
+} */
+
+.product-image{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+#Products {
+    height: 100%;
+    /* display: flex; */
+}
+
+.product-btn {
+    background-color: #56CCF2;
+    border: none;
+    height: 35px;
+    width: 100px;
+    border-radius: 4px;
+}
+
+.product-btn:hover {
+    background-color: darkcyan;
+}
+
+.product-links {
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+
+.title-product-div {
+    display: inline-block;
+}
+
+.image-product-div {
+    display: block;
+}
+
+.pagination {
+    text-align: center;
+
+
+}
+
+.pagination button {
+    background-color: #56CCF2;
+    border: none;
+    margin: 0.5rem;
+    border-radius: 4px;
+    width: 25px;
+    color: white;
+    /* border: 2px solid black; */
+}
+
+.pagination button:hover
+.pagination button:active
+{
+    background-color: darkcyan;
+    color: white;
+}
+
+#nav {
+    overflow-y: scroll;
+    height: 83%;
+}
+
+.cart-title{
+    font-weight: bold;
+}
